@@ -1,0 +1,24 @@
+name: Update Marketplace
+
+on:
+  # We'll need to push to this repo manually when marketplace.json changes
+  push:
+    paths:
+      - 'marketplace.json'
+  
+  # Allow manual trigger
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: . # The folder containing marketplace.json and web/
+          branch: gh-pages # The branch to deploy to
+ 

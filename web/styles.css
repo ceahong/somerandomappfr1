@@ -1,0 +1,255 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Discord color palette */
+    --discord-bg: #36393f;
+    --discord-darker-bg: #2f3136;
+    --discord-channel-bg: #42464d;
+    --discord-light: #dcddde;
+    --discord-text: #ffffff;
+    --discord-muted: #72767d;
+    --discord-link: #00b0f4;
+    --discord-blurple: #5865f2;
+    --discord-green: #57f287;
+    --discord-yellow: #fee75c;
+    --discord-red: #ed4245;
+}
+
+body {
+    font-family: 'Whitney', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--discord-text);
+    background-color: var(--discord-darker-bg);
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 24px;
+    background-color: var(--discord-bg);
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header h1 {
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: var(--discord-text);
+}
+
+header p {
+    color: var(--discord-light);
+    font-size: 1rem;
+}
+
+.marketplace-container {
+    padding: 20px;
+}
+
+#loading, #empty-message {
+    text-align: center;
+    padding: 30px;
+    font-size: 1.2em;
+    color: var(--discord-light);
+    background-color: var(--discord-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#marketplace-listings {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.marketplace-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--discord-bg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.marketplace-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.celebrity-image-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%; /* 450px/600px = 0.75 = 75% aspect ratio */
+    overflow: hidden;
+}
+
+.celebrity-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 16px;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.celebrity-details h2 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--discord-text);
+}
+
+.celebrity-details p {
+    color: var(--discord-muted);
+    font-size: 0.9em;
+}
+
+.username {
+    color: var(--discord-green);
+    font-weight: 600;
+}
+
+.wishlist-section {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 12px;
+    background-color: var(--discord-channel-bg);
+    border-radius: 8px;
+}
+
+.wishlist-section h3 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: var(--discord-light);
+    font-weight: 600;
+}
+
+.wishlist-items {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    max-height: 80px;
+    overflow-y: auto;
+}
+
+.wishlist-item {
+    background-color: var(--discord-darker-bg);
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    color: var(--discord-light);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.claim-section {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.claim-section p {
+    color: var(--discord-light);
+    margin-bottom: 8px;
+    font-size: 0.95em;
+}
+
+.claim-command {
+    background-color: var(--discord-darker-bg);
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    color: var(--discord-green);
+    display: inline-block;
+    margin: 8px 0;
+    font-size: 1.1em;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 500;
+}
+
+.timestamp {
+    font-size: 0.8em;
+    color: var(--discord-muted);
+    text-align: right;
+    margin-top: 15px;
+}
+
+/* Whitney font for Discord look */
+@font-face {
+    font-family: 'Whitney';
+    src: url('https://cdn.jsdelivr.net/gh/nekochanshnya/cdn/whitney-300.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Whitney';
+    src: url('https://cdn.jsdelivr.net/gh/nekochanshnya/cdn/whitney-400.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Whitney';
+    src: url('https://cdn.jsdelivr.net/gh/nekochanshnya/cdn/whitney-500.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Whitney';
+    src: url('https://cdn.jsdelivr.net/gh/nekochanshnya/cdn/whitney-600.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Whitney';
+    src: url('https://cdn.jsdelivr.net/gh/nekochanshnya/cdn/whitney-700.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@media (max-width: 768px) {
+    #marketplace-listings {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    #marketplace-listings {
+        grid-template-columns: 1fr;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+}

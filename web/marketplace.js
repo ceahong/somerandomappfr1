@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Fetch data from marketplace.json in the root directory
 async function fetchMarketplaceData() {
     try {
-        const response = await fetch(`/marketplace.json?t=${Date.now()}`);
+        const response = await fetch('../marketplace.json');
         const data = await response.json();
         displayMarketplace(data);
     } catch (error) {

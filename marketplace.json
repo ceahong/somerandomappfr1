@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "5253": {
+    "user_id": 931545952370696242,
+    "username": "ceah",
+    "channel_id": 1024076433544450082,
+    "channel_id_string": "1024076433544450082",
+    "celebrity_name": "Sabrina Carpenter",
+    "posted_at": 1746854697,
+    "wishlist": {
+      "1024076431468286001": "Addison Rae"
+    }
+  },
+  "1688": {
+    "user_id": 931545952370696242,
+    "username": "ceah",
+    "channel_id": 1024076432370045024,
+    "channel_id_string": "1024076432370045024",
+    "celebrity_name": "Ariana Grande",
+    "posted_at": 1746855223,
+    "wishlist": {
+      "1024076431468286001": "Addison Rae"
+    }
+  }
+}
